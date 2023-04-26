@@ -8,7 +8,7 @@ export const UserData = (props) => {
 
     return(
         <>
-            <div className="container">
+            <div className="curr_git_user">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="user_data_block-wrapper row">
@@ -23,11 +23,11 @@ export const UserData = (props) => {
                                     {
                                         currUserData.bio != null
                                             ?
-                                                (
-                                                    <div className="user_bio"></div>
-                                                )
+                                            (
+                                                <div className="user_bio"></div>
+                                            )
                                             :
-                                                null
+                                            null
                                     }
                                 </div>
                             </div>
@@ -36,24 +36,24 @@ export const UserData = (props) => {
                                     {
                                         currUserData.followers != null
                                             ?
-                                                (
-                                                    <div className="user_followers">
-                                                        <span>User followers: {currUserData.followers}</span>
-                                                    </div>
-                                                )
+                                            (
+                                                <div className="user_followers">
+                                                    <span>User followers: {currUserData.followers}</span>
+                                                </div>
+                                            )
                                             :
-                                                null
+                                            null
                                     }
                                     {
                                         currUserData.followers != null
                                             ?
-                                                (
-                                                    <div className="user_following">
-                                                        <span>User following: {currUserData.following}</span>
-                                                    </div>
-                                                )
+                                            (
+                                                <div className="user_following">
+                                                    <span>User following: {currUserData.following}</span>
+                                                </div>
+                                            )
                                             :
-                                                null
+                                            null
                                     }
                                 </div>
                             </div>

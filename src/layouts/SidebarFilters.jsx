@@ -18,7 +18,7 @@ export const SidebarFilters = (props) => {
 
     return(
         <div className="col-md-3">
-            <aside className="filters-wrapper">
+            <div className="filters-wrapper">
                 <form action="" className="filters_list d-grid gap-3">
                     {/* Search input */}
                     <input className="form-control"
@@ -95,7 +95,7 @@ export const SidebarFilters = (props) => {
                         </div>
                     </fieldset>
                 </form>
-            </aside>
+            </div>
         </div>
     )
 }

@@ -1,3 +1,69 @@
+/* Global */
+#app-wrapper{
+  display: flex;
+}
+
+/* Side Menu */
+.sideMenu{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 140px;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff12;
+  box-shadow: 0px 0px 10px -6px white;
+  height: 100vh;
+}
+
+.sideMenu > *{
+  padding: 15px 0;
+}
+
+.sideMenu > *:first-child{
+  padding-top: unset;
+}
+
+.sideMenu > *:last-child{
+  padding-bottom: unset;
+}
+
+.sideMenu > *:not(:last-child) {
+  border-bottom: 1px solid red;
+}
+
+.sideMenu .menuList{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.sideMenu .menuList .item{
+  transition: .3s;
+  border: 1px solid transparent;
+
+  /*padding: 3px 10px;*/
+  /*width: fit-content;*/
+  /*white-space: nowrap;*/
+  /*border: 2px solid #000;*/
+  /*text-decoration: unset;*/
+  /*color: #000;*/
+}
+.sideMenu .menuList .item:hover{
+  background-color: #444;
+  border-color: #aaa;
+}
+
+.sideMenu .menuList .item.selected{
+  background-color: #222;
+  border-color: #ffffff;
+}
+
+.content-wrapper{
+  padding: 20px;
+}
+
 img{
   width: 100%;
   height: auto;
@@ -8,13 +74,13 @@ input + label{
   cursor: pointer;
 }
 
-.row{
-  margin: -15px;
-}
+/*.row{*/
+/*  margin: -15px;*/
+/*}*/
 
-.row>*[class^="col"]{
-  padding: 15px;
-}
+/*.row>*[class^="col"]{*/
+/*  padding: 15px;*/
+/*}*/
 
 .user_list_block > *{
   position: relative;
@@ -24,9 +90,46 @@ input + label{
 .filters-wrapper{
   position: sticky;
   top: 20px;
-  background-color: #f3f3f3;
+  background-color: #ffffff12;
   padding: 15px;
   border-radius: 5px;
 }
 
+
 /* user_list_block */
+
+.user_list_block .cards-wrapper .card{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 20px;
+  gap: 15px;
+  background-color: #ffffff12;
+  color: #fff;
+  transition: .3s;
+}
+
+.user_list_block .cards-wrapper .card:hover{
+  background-color: #ffffff24;
+}
+
+.user_list_block .cards-wrapper .card img {
+  height: 80px;
+  width: auto;
+}
+
+.user_list_block .cards-wrapper .card .card-body {
+  overflow: hidden;
+}
+
+.user_list_block .cards-wrapper .card > *:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 0;
+}
+
+
+/* Current Git User */
+
+.user_data_block-wrapper{
+  color: #fff;
+}

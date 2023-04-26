@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 // Components
-import { UserData } from '../organisms/UserData'
+import { UserData } from '../layouts/UserData'
 
 export const CurrGitUser = () => {
     const currUserLogin = useParams().login
