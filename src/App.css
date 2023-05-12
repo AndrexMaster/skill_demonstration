@@ -12,7 +12,7 @@
   position: sticky;
   top: 0;
   background-color: #ffffff12;
-  box-shadow: 0px 0px 10px -6px white;
+  /*box-shadow: 0px 0px 10px -6px white;*/
   height: 100vh;
 }
 
@@ -84,10 +84,11 @@ input + label{
 
 .user_list_block > *{
   position: relative;
-
 }
 
-.filters-wrapper{
+.filters_list{
+  display: grid;
+  gap: 30px;
   position: sticky;
   top: 20px;
   background-color: #ffffff12;
@@ -103,8 +104,8 @@ input + label{
   grid-template-columns: auto 1fr;
   padding: 20px;
   gap: 15px;
-  background-color: #ffffff12;
-  color: #fff;
+  /*background-color: #ffffff12;*/
+  /*color: #fff;*/
   transition: .3s;
 }
 
@@ -115,6 +116,7 @@ input + label{
 .user_list_block .cards-wrapper .card img {
   height: 80px;
   width: auto;
+  border-radius: 0.375rem;
 }
 
 .user_list_block .cards-wrapper .card .card-body {
@@ -131,5 +133,5 @@ input + label{
 /* Current Git User */
 
 .user_data_block-wrapper{
-  color: #fff;
+ /* color: #fff; */
 }

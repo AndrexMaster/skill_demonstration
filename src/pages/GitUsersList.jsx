@@ -3,7 +3,8 @@ import axios from "axios";
 
 // Components
 import { UsersList } from "../components/UsersList";
-import {generatePath} from "react-router-dom";
+// import { generatePath } from "react-router-dom";
+import {APIS_CONFIG} from "APIConfig";
 
 
 export const GitUsersList = () => {
@@ -51,7 +52,6 @@ export const GitUsersList = () => {
                 apiParams = apiParams + sortDirection
             }
 
-
             return apiParams
 
         }
@@ -59,7 +59,7 @@ export const GitUsersList = () => {
 
     useEffect(() => {
         axios
-            .get('https://api.github.com/search/users' + formingApiParams())
+            .get(APIS_CONFIG.git.usersSearch + formingApiParams())
             .then((e) => {
                 setUsersList(e.data)
             });
@@ -67,13 +67,13 @@ export const GitUsersList = () => {
 
     useEffect(() => {
         axios
-            .get('https://api.github.com/search/users' + formingApiParams())
+            .get(APIS_CONFIG.git.usersSearch + formingApiParams())
             .then((e) => {
                 setUsersList(e.data)
             });
     }, []);
 
-    return(
+    return (
         <>
             {
                 usersList.items != null && usersList.items.length > 0
@@ -84,11 +84,13 @@ export const GitUsersList = () => {
                                 setUserLogin={setUserLogin}
                                 setSortBy={setSortBy}
                                 setSortDirection={setSortDirection}
+                                setPerPage={setPerPage}
+                                setPageOfList={setPageOfList}
                             ></UsersList>
                         )
                     :
                     "#"
             }
         </>
-    )
+    );
 }
