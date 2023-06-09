@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 
 export const Header = () => {
   return(
-      <header>
-          <div className="container">
-              <div className="row">
-                  <Link to="/" className="col-md-2">Home</Link>
-                  <Link to="/gitUsers" className="col-md-2">Git Users</Link>
+      <>
+          <header>
+              <div className="menuList">
+                  <Link to="/" className="item btn btn-secondary">Home</Link>
+                  <Link to="/gitUsers" className="item btn btn-secondary">Git Users</Link>
+                  <Link to="/auth" className="item btn btn-secondary">LogIn</Link>
               </div>
-          </div>
-      </header>
+          </header>
+          <Outlet />
+      </>
   )
 }

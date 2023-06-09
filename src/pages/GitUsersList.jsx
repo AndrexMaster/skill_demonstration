@@ -4,7 +4,7 @@ import axios from "axios";
 // Components
 import { UsersList } from "../components/UsersList";
 // import { generatePath } from "react-router-dom";
-import {APIS_CONFIG} from "APIConfig";
+import { APIS_CONFIG } from "config/APIConfig";
 
 
 export const GitUsersList = () => {

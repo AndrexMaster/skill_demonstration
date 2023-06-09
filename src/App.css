@@ -1,92 +1,111 @@
 /* Global */
-#app-wrapper{
+#app-wrapper {
   display: flex;
 }
 
 /* Side Menu */
-.sideMenu{
+header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  min-width: 140px;
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: #ffffff12;
-  /*box-shadow: 0px 0px 10px -6px white;*/
-  height: 100vh;
+  height: fit-content;
+  width: 100vw;
 }
 
-.sideMenu > *{
+header > * {
   padding: 15px 0;
 }
 
-.sideMenu > *:first-child{
+header > *:first-child {
   padding-top: unset;
 }
 
-.sideMenu > *:last-child{
+header > *:last-child {
   padding-bottom: unset;
 }
 
-.sideMenu > *:not(:last-child) {
+header > *:not(:last-child) {
   border-bottom: 1px solid red;
 }
 
-.sideMenu .menuList{
+header .menuList {
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 120px;
 }
 
-.sideMenu .menuList .item{
+header .menuList .item {
   transition: .3s;
-  border: 1px solid transparent;
-
-  /*padding: 3px 10px;*/
-  /*width: fit-content;*/
-  /*white-space: nowrap;*/
-  /*border: 2px solid #000;*/
-  /*text-decoration: unset;*/
-  /*color: #000;*/
-}
-.sideMenu .menuList .item:hover{
-  background-color: #444;
-  border-color: #aaa;
+  color: #fff;
+  font-size: 20px;
+  position: relative;
 }
 
-.sideMenu .menuList .item.selected{
+
+header .menuList .item::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: .3s;
+  background-color: #fff;
+}
+
+header .menuList .item:hover {
+  background-color: transparent;
+}
+
+header .menuList .item:hover::after {
+  width: 100%;
+}
+
+header .menuList .item.selected {
   background-color: #222;
   border-color: #ffffff;
 }
 
-.content-wrapper{
+.content-wrapper {
   padding: 20px;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-input + label{
+input + label {
   cursor: pointer;
 }
 
-/*.row{*/
-/*  margin: -15px;*/
-/*}*/
+.main-banner {
+  background: url('https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  padding: 5vw 10vw;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  font-size: 90px;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+}
 
-/*.row>*[class^="col"]{*/
-/*  padding: 15px;*/
-/*}*/
-
-.user_list_block > *{
+.user_list_block > * {
   position: relative;
 }
 
-.filters_list{
+.filters_list {
   display: grid;
   gap: 30px;
   position: sticky;
@@ -99,7 +118,7 @@ input + label{
 
 /* user_list_block */
 
-.user_list_block .cards-wrapper .card{
+.user_list_block .cards-wrapper .card {
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 20px;
@@ -109,7 +128,7 @@ input + label{
   transition: .3s;
 }
 
-.user_list_block .cards-wrapper .card:hover{
+.user_list_block .cards-wrapper .card:hover {
   background-color: #ffffff24;
 }
 
@@ -132,6 +151,6 @@ input + label{
 
 /* Current Git User */
 
-.user_data_block-wrapper{
+.user_data_block-wrapper {
  /* color: #fff; */
 }

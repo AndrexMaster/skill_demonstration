@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { ChakraProvider, Container } from '@chakra-ui/react'
 
 // Components
-// import { Header } from "./components/Header";
+import { Header } from "./components/Header";
 import { SideMenu } from "./components/SideMenu";
 import { Home } from "./pages/Home";
 import { GitUsersList } from "./pages/GitUsersList";
@@ -18,14 +18,13 @@ import './App.css';
 export const App = () => {
     return (
         <div id="app-wrapper">
-            <SideMenu />
-            <Container maxW='1366px' className="content-wrapper">
-                <Routes>
+            <Routes>
+                <Route element={<Header/>}>
                     <Route index element={<Home/>}/>
                     <Route path="/gitUsers" element={<GitUsersList />} />
                     <Route path="/auth" element={<UserAuth type="login" />} />
-                </Routes>
-            </Container>
+                </Route>
+            </Routes>
         </div>
     );
 }

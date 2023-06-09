@@ -1,8 +1,8 @@
 // import { render, screen } from '@testing-library/react';
-// import Index from './Index';
+// import  from './';
 //
 // test('renders learn react link', () => {
-//   render(<Index />);
+//   render(< />);
 //   const linkElement = screen.getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
