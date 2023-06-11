@@ -2,18 +2,18 @@
 import { BrowserRouter, Routes, Route,} from "react-router-dom";
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { ChakraProvider, Container } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 
 // Components
-import { Header } from "./components/Header";
-import { SideMenu } from "./components/SideMenu";
-import { Home } from "./pages/Home";
-import { GitUsersList } from "./pages/GitUsersList";
-import { UserAuth } from "./pages/UserAuth";
+import { Header } from "./js/components/Header";
+// import { SideMenu } from "./js/components/SideMenu";
+import { Home } from "./js/pages/Home";
+import { GitUsersList } from "./js/pages/GitUsersList";
+import { UserAuth } from "./js/pages/UserAuth";
 
 // Styles
-import './index.css';
-import './App.css';
+import './css/index.css';
+import './css/App.css';
 
 export const App = () => {
     return (

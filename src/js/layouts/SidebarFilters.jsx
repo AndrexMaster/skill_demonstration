@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Box,
     Input,
@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 export const SidebarFilters = (props) => {
-    const [ checked, setChecked ] = useState(true);
+    const isChecked = true;
 
     // Data set
     const setUserLogin = (data) => {
@@ -47,7 +47,7 @@ export const SidebarFilters = (props) => {
                 </FormLabel>
                 <RadioGroup
                     defaultValue='desc'
-                    defaultChecked={checked}
+                    defaultChecked={ isChecked }
                     onChange={(e) => {
                         setSortDirection(e)
                     }}
@@ -74,7 +74,7 @@ export const SidebarFilters = (props) => {
                 </FormLabel>
                 <RadioGroup
                     defaultValue='login'
-                    defaultChecked={checked}
+                    defaultChecked={ isChecked }
                     onChange={(e) => {
                         setSortBy(e)
                     }}

@@ -5,10 +5,12 @@ import { Outlet } from "react-router-dom";
 import { MainBanner } from "../components/mainPage/MainBanner";
 import { MainTabs } from "../components/mainPage/MainTabs";
 
+// Css
+import '../../css/pages/mainPage.css'
 export const Home = () => {
 
   return (
-      <div className="main_content">
+      <div className="main-content">
           <MainBanner/>
           <MainTabs/>
         <Outlet />

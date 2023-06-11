@@ -7,6 +7,7 @@ export const UserAuth = (props) => {
     return(
         <>
             <span>UserAuth</span>
+            {/*<UserData />*/}
         </>
     )
 
