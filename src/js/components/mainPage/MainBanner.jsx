@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react';
 export const MainBanner = () => {
     const alertText = {
         color: 'red',
-        'border-bottom': '3px solid red',
+        borderBottom: '3px solid red',
         padding: '0 25px'
     }
 

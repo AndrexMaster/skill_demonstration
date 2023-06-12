@@ -37,7 +37,7 @@ export const MainTabs = () => {
                         <Tab>Three</Tab>
                     </TabList>
                     <TabPanels>
-                        <TabPanel>
+                        <TabPanel p={6}>
                             <Grid templateColumns='repeat(4, 1fr)' gap={6}>
                                 <GridItem w='100%'>
                                     <Card>
@@ -46,14 +46,15 @@ export const MainTabs = () => {
                                                 <GridItem w='100%'>
                                                     <Stack direction='row'>
                                                         <Badge colorScheme='blue'>React</Badge>
+                                                        <Badge colorScheme='orange'>Game</Badge>
                                                     </Stack>
                                                 </GridItem>
                                                 <GridItem w='100%'>
-                                                    <Heading size='md'> Customer dashboard</Heading>
+                                                    <Heading size='md'> Tic Tac Toe</Heading>
                                                 </GridItem>
                                             </Grid>
                                         </CardHeader>
-                                        <CardBody>
+                                        <CardBody className='card-body'>
                                             <Grid gap={6}>
                                                 <GridItem w='100%'>
                                                     <Image

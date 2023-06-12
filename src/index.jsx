@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
-import { BrowserRouter, Routes, Route,} from "react-router-dom";
 import React from 'react';
+import { BrowserRouter, Routes, Route,} from "react-router-dom";
 import { createRoot } from 'react-dom/client';
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -10,6 +9,7 @@ import { Header } from "./js/components/Header";
 import { Home } from "./js/pages/Home";
 import { GitUsersList } from "./js/pages/GitUsersList";
 import { UserAuth } from "./js/pages/UserAuth";
+import { TicTacToe } from "./js/pages/TicTacToe/TicTacToe";
 
 // Styles
 import './css/index.css';
@@ -23,6 +23,7 @@ export const App = () => {
                     <Route index element={<Home/>}/>
                     <Route path="/gitUsers" element={<GitUsersList />} />
                     <Route path="/auth" element={<UserAuth type="login" />} />
+                    <Route path="/tic-tac-toe" element={<TicTacToe />} />
                 </Route>
             </Routes>
         </div>
