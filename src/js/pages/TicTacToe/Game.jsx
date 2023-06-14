@@ -5,7 +5,7 @@ import { WinPatterns } from './Patterns'
 
 // Css
 import './TicTacToe.css'
-export const TicTacToe = () => {
+export const Game = () => {
     const [isBoardChanged, setIsBoardChanged] = useState(false)
     const [board, setBoard] = useState(['', '', '', '', '', '', '', '', ''])
     const [currPlayer, setCurrPlayer] = useState('X')
@@ -65,7 +65,7 @@ export const TicTacToe = () => {
             }
         })
     }
-    
+
     const checkTie = () => {
         let filled = true;
 

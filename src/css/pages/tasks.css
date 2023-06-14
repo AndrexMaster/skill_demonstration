@@ -1,0 +1,9 @@
+.tasks-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5vw;
+    min-height: 100vh;
+    width: 100vw;
+}

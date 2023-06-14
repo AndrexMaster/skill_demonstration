@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 // Components
 import { MainBanner } from "../components/mainPage/MainBanner";
-import { MainTabs } from "../components/mainPage/MainTabs";
+import { MainTabs } from "../components/mainPage/tabs/MainTabs";
 
 // Css
 import '../../css/pages/mainPage.css'

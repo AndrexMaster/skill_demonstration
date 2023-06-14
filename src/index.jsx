@@ -9,7 +9,8 @@ import { Header } from "./js/components/Header";
 import { Home } from "./js/pages/Home";
 import { GitUsersList } from "./js/pages/GitUsersList";
 import { UserAuth } from "./js/pages/UserAuth";
-import { TicTacToe } from "./js/pages/TicTacToe/TicTacToe";
+import { TicTacToeApp } from "./js/pages/TicTacToe/App";
+import TaskApp from "./js/pages/Tasks/App";
 
 // Styles
 import './css/index.css';
@@ -23,7 +24,8 @@ export const App = () => {
                     <Route index element={<Home/>}/>
                     <Route path="/gitUsers" element={<GitUsersList />} />
                     <Route path="/auth" element={<UserAuth type="login" />} />
-                    <Route path="/tic-tac-toe" element={<TicTacToe />} />
+                    <Route path="/tic-tac-toe" element={<TicTacToeApp />} />
+                    <Route path="/task-list" element={<TaskApp />} />
                 </Route>
             </Routes>
         </div>
