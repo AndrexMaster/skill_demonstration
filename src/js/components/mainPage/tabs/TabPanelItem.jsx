@@ -12,7 +12,7 @@ import {
     Stack,
     Text
 } from "@chakra-ui/react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const TabPanelItem = ({itemData}) => {
 

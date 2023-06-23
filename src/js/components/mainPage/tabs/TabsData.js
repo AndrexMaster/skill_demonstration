@@ -1,7 +1,6 @@
-export const ItemsList = [
+export const TabsData = [
     {
         'tab_heading': 'One',
-        'disabling': 'isDisabled',
         'tab_data': [
             {
                 'badges': [
@@ -31,14 +30,15 @@ export const ItemsList = [
                     }
                 ],
                 'heading': 'Tasks List',
-                'img_src': 'https://media.istockphoto.com/id/168678735/uk/%D1%84%D0%BE%D1%82%D0%BE/metal-tic-tac-toe-game-pieces.jpg?s=612x612&w=0&k=20&c=ByOFZX5qEZJgCKvu7p-mZaXJtl4_eE4hjsLIF_1nos0=',
+                'img_src': 'https://www.timedoctor.com/blog/images/2020/10/task-list-template.jpg',
                 'description': 'View a summary of all your customers over the last month.',
                 'btn_link': '/task-list             '
             },
 
         ]
     },
-    // {
-    //     'tab_heading': 'Two',
-    // },
+    {
+        'tab_heading': 'Two',
+        'isDisabled': true,
+    },
 ]

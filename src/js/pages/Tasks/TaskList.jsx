@@ -1,66 +1,54 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { TasksContext } from './TasksContext';
+import { Task } from './Task'
+import {
+    Badge,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Flex,
+    Heading,
+    Spacer,
+} from "@chakra-ui/react";
 
-export const TaskList = ({tasks, onChangeTask, onDeleteTask}) => {
-    return (
-        <ul>
-            {tasks.map(task => (
-                <li key={task.id}>
-                    <Task
-                        task={task}
-                        onChange={onChangeTask}
-                        onDelete={onDeleteTask}
-                    />
-                </li>
-            ))}
-        </ul>
-    );
-}
+export const TaskList = ({currListStatus}) => {
+    const tasks = useContext(TasksContext);
 
-function Task({ task, onChange, onDelete }) {
-    const [isEditing, setIsEditing] = useState(false);
-    let taskContent;
-    if (isEditing) {
-        taskContent = (
-            <>
-                <input
-                    value={task.text}
-                    onChange={e => {
-                        onChange({
-                            ...task,
-                            text: e.target.value
-                        });
-                    }} />
-                <button onClick={() => setIsEditing(false)}>
-                    Save
-                </button>
-            </>
-        );
-    } else {
-        taskContent = (
-            <>
-                {task.text}
-                <button onClick={() => setIsEditing(true)}>
-                    Edit
-                </button>
-            </>
-        );
-    }
     return (
-        <label>
-            <input
-                type="checkbox"
-                checked={task.done}
-                onChange={e => {
-                    onChange({
-                        ...task,
-                        done: e.target.checked
-                    });
-                }}
-            />
-            {taskContent}
-            <button onClick={() => onDelete(task.id)}>
-                Delete
-            </button>
-        </label>
+        <>
+            {
+                tasks[currListStatus].list && tasks[currListStatus].list.length > 0 ?
+                        <Card maxW="sm" borderWidth="1px" borderRadius="lg" borderColor="gray.200" overflow="hidden" p="3" background={tasks[currListStatus].bg}>
+                            <CardHeader>
+                                <Flex>
+                                    <Heading as="h3" size="md" noOfLines={1}>
+                                        {tasks[currListStatus].heading}
+                                    </Heading>
+                                    <Spacer />
+                                    <div>
+                                        <Badge colorScheme='purple'>Count: {tasks[currListStatus].list.length}</Badge>
+                                    </div>
+                                </Flex>
+                            </CardHeader>
+
+                            <CardBody className='card-body'>
+                                <ul>
+                                    {tasks[currListStatus].list.map(task => (
+                                        <li key={task.id}>
+                                            <Task task={task} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardBody>
+
+                            <CardFooter>
+
+                            </CardFooter>
+                        </Card>
+                    :
+                    null
+            }
+        </>
     );
 }

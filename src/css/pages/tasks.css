@@ -7,3 +7,25 @@
     min-height: 100vh;
     width: 100vw;
 }
+
+
+.tasks-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.tasks-wrapper li label{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.tasks-table{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
