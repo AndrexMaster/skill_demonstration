@@ -16,16 +16,14 @@ export const GitUsersList = () => {
     const [ sortDirection, setSortDirection ] = useState('desc');
 
     const formingApiParams = () => {
-
         return '?' + new URLSearchParams({
             'q': userLogin,
             'per_page': perPage,
             'page': pageOfList,
             's': sortBy,
             'o': sortDirection
-        }).toString()
-
-    }
+        }).toString();
+    };
 
     useEffect(() => {
         axios

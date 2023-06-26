@@ -7,7 +7,6 @@ import {
     TabPanels,
     TabPanel,
     Grid,
-    GridItem,
 } from '@chakra-ui/react';
 
 // Components
@@ -44,9 +43,7 @@ export const MainTabs = () => {
 
                                                         tabsItemsList.tab_data.map((data, idx) => {
                                                             return (
-                                                                <GridItem key={idx} w='100%'>
-                                                                    <TabPanelItem itemData={data} />
-                                                                </GridItem>
+                                                                <TabPanelItem key={idx} itemData={data} />
                                                             )
                                                         })
                                                     :

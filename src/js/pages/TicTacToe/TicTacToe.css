@@ -1,9 +1,12 @@
+.tic-tac-toe-wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+
 .game-wrapper {
     display: grid;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
 }
 
 .scene {

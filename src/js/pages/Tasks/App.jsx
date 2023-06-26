@@ -4,7 +4,7 @@ import { TasksTable } from './TasksTable';
 import { TasksContext, TasksDispatchContext } from './TasksContext';
 
 // Styles
-import '../../../css/pages/tasks.css'
+import '../../../css/pages/tasks.css';
 import { Grid } from "@chakra-ui/react";
 
 export default function TaskApp() {
@@ -26,7 +26,7 @@ export default function TaskApp() {
             </TasksContext.Provider>
         </div>
     );
-}
+};
 
 function tasksReducer(tasks, action) {
     switch (action.type) {
