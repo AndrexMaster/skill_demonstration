@@ -1,39 +1,111 @@
-import { useState, useContext } from 'react';
-import { TasksDispatchContext } from './TasksContext';
+import { useState } from 'react';
 import {
     Button,
+    FormControl,
+    FormLabel,
+    Select,
     Input,
-    InputGroup,
-    InputRightElement
+    Grid,
+    FormErrorMessage,
+    FormHelperText,
+    useDisclosure,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
 } from "@chakra-ui/react";
 
+import { useDispatch, useSelector } from "react-redux";
+
 export const AddTask = () => {
-    const [text, setText] = useState('');
-    const dispatch = useContext(TasksDispatchContext);
+    const [name, setName] = useState('');
+    const [status, setStatus] = useState('todo')
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const tasksStatusOrder = useSelector(state => state.tasksStatusOrder)
+    const statusesData = useSelector(state => state.statusesData)
+    const dispatch = useDispatch();
+
+    const validateName = () => {
+        return name.length > 0
+    }
+
+    const clearFormData = () => {
+        setName('')
+        setStatus('todo')
+    }
+
+    const newTask = () => {
+        if (validateName()) {
+            dispatch({
+                type: 'ADD_TASK',
+                payload: {
+                    id: new Date().valueOf(),
+                    name: name,
+                    status: status
+                }
+            });
+            clearFormData()
+        }
+    };
+
     return (
-        <InputGroup size='md'>
-            <Input
-                placeholder="Add task"
-                value={text}
-                onChange={e => setText(e.target.value)} />
-            <InputRightElement width='4.5rem'>
-                <Button
-                    h='1.75rem'
-                    size='sm'
-                    onClick={() => {
-                        setText('');
-                        dispatch({
-                            type: 'added',
-                            id: nextId++,
-                            text: text,
-                        });
-                    }}
-                >
-                    Save
-                </Button>
-            </InputRightElement>
-        </InputGroup>
+        <>
+            <Button onClick={onOpen}>Open Modal</Button>
+
+            <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Create new task</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                        <Grid gap={6}>
+                            <FormControl isInvalid={name.length <= 0}>
+                                <Input
+                                    placeholder="Task name"
+                                    isRequired
+                                    value={name}
+                                    variant='flushed'
+                                    onChange={e => setName(e.target.value)}
+                                />
+                                {validateName() ? (
+                                    <FormHelperText>
+                                        Enter the name.
+                                    </FormHelperText>
+                                ) : (
+                                    <FormErrorMessage>Name is required.</FormErrorMessage>
+                                )}
+                            </FormControl>
+                            <FormControl>
+                                <FormLabel>Task Status</FormLabel>
+                                <Select
+                                    variant='flushed'
+                                    onChange={e => setStatus(e.target.value)}
+                                >
+                                    {tasksStatusOrder.map((status, idx) => (
+                                        <option key={idx} value={status}>
+                                            {statusesData[status].heading}
+                                        </option>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                    </ModalBody>
+
+                    <ModalFooter>
+                        <Button
+                            colorScheme='blue'
+                            mr={3}
+                            onClick={() => newTask()}
+                        >
+                            Add
+                        </Button>
+                        <Button onClick={onClose}>Cancel</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </>
     );
 }
-
-let nextId = 3;

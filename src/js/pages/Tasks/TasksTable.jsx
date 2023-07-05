@@ -1,25 +1,30 @@
 import { TaskList } from "./TaskList";
-import { useContext } from "react";
-import { ListOrderContext } from "./TasksContext";
 import {Flex, Spacer} from "@chakra-ui/react";
+import {useSelector} from "react-redux";
 
 export const TasksTable = () => {
-    const listOrder = useContext(ListOrderContext)
+
+    const tasksStatusOrder = useSelector(state => state.tasksStatusOrder)
+    const tasksList = useSelector(state => state.tasksList)
 
     return(
         <Flex className="tasks-table">
             {
-                listOrder.map((data, idx) => {
+                tasksStatusOrder.map((currListStatus, idx) => {
+                    let tasksByStatus = tasksList.filter(item => [currListStatus].includes(item.status))
+
                     return (
-                        <div key={idx}>
-                            {
-                                idx > 0 ?
-                                    <Spacer />
-                                :
-                                    null
-                            }
-                            <TaskList currListStatus={data}/>
-                        </div>
+                        tasksByStatus.length > 0 ?
+                            <div key={idx}>
+                                {
+                                    idx > 0 ?
+                                        <Spacer />
+                                        :
+                                        null
+                                }
+                                <TaskList tasksByStatus={tasksByStatus} currListStatus={currListStatus}/>
+                            </div>
+                        : null
                     )
                 })
             }

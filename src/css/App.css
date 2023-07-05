@@ -1,10 +1,14 @@
 /* Global */
+body {
+  overflow-x: hidden;
+}
+
 #app-wrapper {
   display: flex;
 }
 
 /* Side Menu */
-header {
+#app-wrapper > header {
   display: flex;
   align-items: center;
   justify-content: center;
